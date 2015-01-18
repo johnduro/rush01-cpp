@@ -34,7 +34,7 @@ int main (void) {
 	double			i = 0.0;
 
 	while (i <= 100){
-		mram->update();
+		//mram->update();
 		disp.updateDisplay(vectorGlobal);
 		gtk_main_iteration();
 

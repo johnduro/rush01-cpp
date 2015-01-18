@@ -121,9 +121,12 @@ void				GTKDisplay::updateDisplay(std::vector<AModule*>& datas) {
 
 	for(unsigned it=0; it < datas.size(); it++){
   		if (datas[it]->getName() == RAM){
-				std::cout << cpu->getData().cpu_usage.first<< "   "<< it << std::endl;
   			ModuleRAM* ram = static_cast<ModuleRAM*>(datas[it]);
-  			gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(this->ram_bar), ram->getData().used_mem.second);
+				float r = ((float)(8589934592 - ram->getData().memory.second) /(float)8589934592);
+				std::cout << ram->getData().used_mem.first<< "   "<< ram->getData().memory.second << "     " << ram->getData().memory.first << "  "<< r << "r && 1-r "<< 1 - r <<std::endl;
+				ram->update();
+				gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(this->ram_bar2), 1 - r);
+				gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(this->ram_bar), r);
 			}
 			if (datas[it]->getName() == CPU){
 					ModuleCPU* cpu = static_cast<ModuleCPU*>(datas[it]);
@@ -162,7 +165,7 @@ this->cpu_bar = gtk_progress_bar_new();
  	gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(this->cpu_bar), TRUE);
  	gtk_progress_bar_set_text(GTK_PROGRESS_BAR(this->cpu_bar), "USED CPU");
 
- 	gtk_box_pack_start(GTK_BOX(this->cpu_box_label), this->cpu_label, TRUE, TRUE, 0);
+ gtk_box_pack_start(GTK_BOX(this->cpu_box_label), this->cpu_label, TRUE, TRUE, 0);
 	gtk_box_pack_start(GTK_BOX(this->cpu_box_label2), this->cpu_label2, TRUE, TRUE, 1);
 	gtk_box_pack_start(GTK_BOX(this->cpu_box_bar), this->cpu_bar, FALSE, FALSE, 0);
 	return;
@@ -176,10 +179,18 @@ void    			GTKDisplay::displayRAM (AModule& datas) {
 	this->ram_bar2 = gtk_progress_bar_new();
 	this->ram_box_label = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
  	//gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(this->ram_bar), datas.used_mem.second);
- 	gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(this->ram_bar), TRUE);
- 	gtk_progress_bar_set_text(GTK_PROGRESS_BAR(this->ram_bar), "RAM");
- 	gtk_box_pack_start(GTK_BOX(this->ram_box), this->ram_bar, FALSE, FALSE, 3);
- 	gtk_grid_attach (GTK_GRID (this->grid), this->ram_box, 0, 4, 1, 2); //width - height - sizeW - sizeHeight
+ gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(this->ram_bar), TRUE);
+gtk_progress_bar_set_text(GTK_PROGRESS_BAR(this->ram_bar), "RAM USED");
+	gtk_grid_attach (GTK_GRID (this->grid), this->ram_box, 0, 4, 1, 2); //width - height - sizeW - sizeHeight
+	gtk_box_pack_start(GTK_BOX(this->ram_box), this->ram_box_label, FALSE, FALSE, 4);
+
+this->cpu_label2 = gtk_label_new("Total Ram: 8G");
+
+	gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(this->ram_bar2), TRUE);
+	gtk_progress_bar_set_text(GTK_PROGRESS_BAR(this->ram_bar2), "RAM FREE");
+
+gtk_box_pack_start(GTK_BOX(this->ram_box), this->ram_bar2, FALSE, FALSE, 3);
+gtk_box_pack_start(GTK_BOX(this->ram_box), this->ram_bar, FALSE, FALSE, 3);
 	return;
 }
 

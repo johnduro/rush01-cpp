@@ -54,12 +54,14 @@ class GTKDisplay : public IMonitorDisplay {
 		GtkWidget *cpu_box_label;
 		GtkWidget *cpu_box_label2;
 	 	GtkWidget *cpu_box_bar;
-GtkWidget *cpu_label;
-GtkWidget *cpu_label2;
+		GtkWidget *cpu_label;
+		GtkWidget *cpu_label2;
 		GtkWidget *cpu_bar;
 
 		GtkWidget *ram_box;
 		GtkWidget *ram_bar;
+		GtkWidget *ram_bar2;
+		GtkWidget *ram_box_label;
 };
 
 #endif // NCURSESDISPLAY_HPP
