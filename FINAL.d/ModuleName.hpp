@@ -10,6 +10,9 @@
 # include <utility>
 # include "AModule.hpp"
 
+// ** retourne une pair ** //
+// ** acces par par.first(hostname) et pair.second(username) ** //
+
 class ModuleName : public AModule {
 private:
 	std::pair<std::string, std::string>		_data;
