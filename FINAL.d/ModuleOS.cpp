@@ -1,7 +1,7 @@
 #include "ModuleOS.hpp"
 
 
-ModuleOS::ModuleOS(void) : AModule(OS) {
+ModuleOS::ModuleOS(void) : AModule(OS, 2) {
 	return;
 }
 

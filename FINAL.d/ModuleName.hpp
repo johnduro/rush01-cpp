@@ -2,10 +2,6 @@
 #ifndef MODULENAME_HPP
 # define MODULENAME_HPP
 
-# define HOST	'h'
-# define USER	'u'
-
-
 # include <string>
 # include <utility>
 # include "AModule.hpp"

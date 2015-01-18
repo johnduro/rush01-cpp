@@ -1,10 +1,6 @@
 #ifndef MODULEOS_HPP
 # define MODULEOS_HPP
 
-# define OS		'o'
-# define MODEL	'm'
-# define KERNEL	'k'
-
 # include <iostream>
 # include <vector>
 #include <sys/param.h>

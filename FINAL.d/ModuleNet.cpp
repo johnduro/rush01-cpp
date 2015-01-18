@@ -1,7 +1,7 @@
 
 #include "ModuleNet.hpp"
 
-ModuleNet::ModuleNet(void) : AModule(NET), _prev_ipackets(0), _prev_opackets(0), _prev_ibytes(0), _prev_obytes(0) {
+ModuleNet::ModuleNet(void) : AModule(NET, 5), _prev_ipackets(0), _prev_opackets(0), _prev_ibytes(0), _prev_obytes(0) {
 	return;
 }
 
