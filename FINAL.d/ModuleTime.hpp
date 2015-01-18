@@ -17,6 +17,7 @@ private:
 
 public:
 	ModuleTime(void);
+	ModuleTime(int);
 	ModuleTime(const ModuleTime&);
 	~ModuleTime(void);
 

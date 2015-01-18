@@ -4,7 +4,7 @@ AModule::AModule(void) {
 	return;
 }
 
-AModule::AModule(char name, int y) : _name(name), _active(true), _y(y) {
+AModule::AModule(char name, int y) : _name(name), _active(false), _y(y) {
 	return;
 }
 

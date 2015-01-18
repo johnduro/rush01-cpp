@@ -25,6 +25,8 @@ class NcursesDisplay : public IMonitorDisplay {
 
 		void				initDisplay(std::vector<AModule*>&);
 		bool				updateDisplay(std::vector<AModule*>&);
+
+	private:
 		void    			displayCPU (AModule&);
 		void    			displayRAM (AModule&);
 		void    			displayHostUserName(AModule&);
@@ -41,8 +43,7 @@ class NcursesDisplay : public IMonitorDisplay {
 		int					findLastPos(std::vector<AModule*>&);
 		int					checkModule(std::vector<AModule*>&, AModule&, char c);
 		void				pop(std::vector<AModule*>&, char c);
-
-	private:
+		
 		WINDOW				*_HostUserName;
 		WINDOW				*_OSInfo;
 		WINDOW				*_Date;

@@ -1,21 +1,14 @@
-COMP=g++
-CFLAGS=-Wall -Wextra -Werror
-FILES=\
-main.cpp \
-AModule.cpp \
-ModuleCPU.cpp \
-ModuleName.cpp \
-ModuleNet.cpp \
-ModuleOS.cpp \
-ModuleRAM.cpp \
-ModuleTime.cpp \
-NcursesDisplay.cpp \
-ft_timer.cpp
+COMP = g++
 
-EXE=ft_gkrellm
+CFLAGS = -Wall -Wextra -Werror
 
-GCK_S=`pkg-config --cflags gtk+-3.0`
-GCK_E=`pkg-config --libs gtk+-3.0`
+FILES = main.cpp AModule.cpp ModuleCPU.cpp ModuleName.cpp ModuleNet.cpp ModuleOS.cpp ModuleRAM.cpp ModuleTime.cpp NcursesDisplay.cpp \
+GTKDisplay.cpp ft_timer.cpp
+
+EXE = ft_gkrellm
+
+GTK_S = `pkg-config --cflags gtk+-3.0`
+GTK_E = `pkg-config --libs gtk+-3.0`
 	
 
 

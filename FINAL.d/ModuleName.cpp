@@ -6,6 +6,10 @@ ModuleName::ModuleName(void) : AModule(HOST, 0) {
 	return;
 }
 
+ModuleName::ModuleName(int y) : AModule(HOST, y) {
+	return;
+}
+
 ModuleName::ModuleName(const ModuleName& src) : AModule(src) {
 	return;
 }

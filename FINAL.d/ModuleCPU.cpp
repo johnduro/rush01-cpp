@@ -11,6 +11,10 @@ ModuleCPU::ModuleCPU(void) : AModule(CPU, 3), _previousTotalTicks(0), _previousI
 	return;
 }
 
+ModuleCPU::ModuleCPU(int y) : AModule(CPU, y), _previousTotalTicks(0), _previousIdleTicks(0) {
+	return;
+}
+
 ModuleCPU::ModuleCPU(const ModuleCPU& src) : AModule(src) {
 	return;
 }

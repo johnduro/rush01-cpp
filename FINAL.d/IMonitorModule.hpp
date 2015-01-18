@@ -16,6 +16,8 @@
 class IMonitorModule
 {
 	public:
+		virtual ~IMonitorModule(void) {}
+
 		virtual void	activate(bool) = 0;
 		virtual bool	isActive(void) const = 0;
 		virtual void	initialize(void) = 0;

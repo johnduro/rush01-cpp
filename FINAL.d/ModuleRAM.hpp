@@ -22,6 +22,7 @@ public:
 	};
 
 	ModuleRAM(void);
+	ModuleRAM(int);
 	ModuleRAM(const ModuleRAM&);
 	~ModuleRAM(void);
 

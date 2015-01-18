@@ -5,6 +5,10 @@ ModuleOS::ModuleOS(void) : AModule(OS, 2) {
 	return;
 }
 
+ModuleOS::ModuleOS(int y) : AModule(OS, y) {
+    return;
+}
+
 ModuleOS::ModuleOS(const ModuleOS& src) : AModule(src) {
 	return;
 }

@@ -12,6 +12,10 @@ ModuleRAM::ModuleRAM(void) : AModule(RAM, 4) {
 	return;
 }
 
+ModuleRAM::ModuleRAM(int y) : AModule(RAM, y) {
+	return;
+}
+
 ModuleRAM::ModuleRAM(const ModuleRAM& src) : AModule(src) {
 	return;
 }

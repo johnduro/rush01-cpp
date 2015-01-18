@@ -25,6 +25,7 @@ typedef struct osver osxver ;
 class ModuleOS : public AModule {
 public:
 	ModuleOS(void);
+	ModuleOS(int);
 	ModuleOS(const ModuleOS&);
 	~ModuleOS(void);
 

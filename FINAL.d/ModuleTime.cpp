@@ -8,6 +8,10 @@ ModuleTime::ModuleTime(void) : AModule(TIME, 1) {
 	return;
 }
 
+ModuleTime::ModuleTime(int y) : AModule(TIME, y) {
+	return;
+}
+
 ModuleTime::ModuleTime(const ModuleTime& src) : AModule(src) {
 	return;
 }

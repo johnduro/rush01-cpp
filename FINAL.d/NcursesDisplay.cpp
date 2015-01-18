@@ -216,7 +216,7 @@ void				NcursesDisplay::init_ncurses( std::vector<AModule*>& vectorGlobal) {
 	getmaxyx(stdscr, parent_y, parent_x);
 	for (unsigned int i = 0; i < vectorGlobal.size();i++) {
 		if (vectorGlobal[i]->getName() == HOST)
-			_HostUserName = newwin(DEFAULT_SIZE, parent_x, vectorGlobal[i]->getY(), 0);
+			_HostUserName = newwin(DEFAULT_SIZE, parent_x, vectorGlobal[i]->getY() * DEFAULT_SIZE, 0);
 		if (vectorGlobal[i]->getName() == TIME)
 			_Date = newwin(DEFAULT_SIZE, parent_x, vectorGlobal[i]->getY() * DEFAULT_SIZE, 0);
 		if (vectorGlobal[i]->getName() == CPU)

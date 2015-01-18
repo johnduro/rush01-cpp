@@ -15,6 +15,7 @@ private:
 
 public:
 	ModuleName(void);
+	ModuleName(int);
 	ModuleName(const ModuleName&);
 	~ModuleName(void);
 

@@ -44,6 +44,7 @@ public:
 		std::map<char, std::pair<std::pair<long long, long long>, std::pair<long long, long long> > >		net;
 	};
 	ModuleNet(void);
+	ModuleNet(int);
 	ModuleNet(const ModuleNet&);
 	~ModuleNet(void);
 

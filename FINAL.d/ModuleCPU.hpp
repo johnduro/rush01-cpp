@@ -23,6 +23,7 @@ public:
 		std::pair<float , float>	cpu_usage;
 	};
 	ModuleCPU(void);
+	ModuleCPU(int);
 	ModuleCPU(const ModuleCPU&);
 	~ModuleCPU(void);
 
