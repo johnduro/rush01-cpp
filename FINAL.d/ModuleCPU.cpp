@@ -7,7 +7,7 @@
 
 #include "ModuleCPU.hpp"
 
-ModuleCPU::ModuleCPU(void) : AModule(CPU), _previousTotalTicks(0), _previousIdleTicks(0) {
+ModuleCPU::ModuleCPU(void) : AModule(CPU, 3), _previousTotalTicks(0), _previousIdleTicks(0) {
 	return;
 }
 

@@ -8,7 +8,7 @@
 
 #include "ModuleRAM.hpp"
 
-ModuleRAM::ModuleRAM(void) : AModule(INFO) {
+ModuleRAM::ModuleRAM(void) : AModule(RAM, 4) {
 	return;
 }
 

@@ -2,7 +2,7 @@
 #include "ModuleName.hpp"
 #include <unistd.h>
 
-ModuleName::ModuleName(void) : AModule(INFO) {
+ModuleName::ModuleName(void) : AModule(HOST, 0) {
 	return;
 }
 

@@ -4,7 +4,7 @@
 #include <time.h>
 #include <algorithm>
 
-ModuleTime::ModuleTime(void) : AModule(INFO) {
+ModuleTime::ModuleTime(void) : AModule(TIME, 1) {
 	return;
 }
 

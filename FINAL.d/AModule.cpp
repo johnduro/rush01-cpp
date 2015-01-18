@@ -4,7 +4,7 @@ AModule::AModule(void) {
 	return;
 }
 
-AModule::AModule(char name) : _name(name), _active(false) {
+AModule::AModule(char name, int y) : _name(name), _active(true), _y(y) {
 	return;
 }
 
@@ -33,4 +33,20 @@ bool		AModule::isActive(void) const {
 
 char		AModule::getName(void) const {
 	return this->_name;
+}
+
+int			AModule::getY(void) const {
+	return this->_y;
+}
+
+int			AModule::getX(void) const {
+	return this->_x;
+}
+
+void		AModule::setY(int const &y) {
+	_y = y;
+}
+
+void		AModule::setX(int const &x) {
+	_x = x;
 }
