@@ -26,17 +26,17 @@ void				NcursesDisplay::initDisplay( std::vector<AModule*>& vectorGlobal) {
 	return;
 }
 
-void				NcursesDisplay::updateDisplay( std::vector<AModule*>& vectorGlobal) {
+bool				NcursesDisplay::updateDisplay( std::vector<AModule*>& vectorGlobal) {
 	int c = getch();
 	if (!displayNcurses(vectorGlobal, c))
-		return;
+		return false;
 	wrefresh(_HostUserName);
 	wrefresh(_Date);
 	wrefresh(_OSInfo);
 	wrefresh(_CPU);
 	wrefresh(_RAM);
 	wrefresh(_Network);
-	return;
+	return true;
 }
 
 void    			NcursesDisplay::displayCPU ( AModule& mcpu) {

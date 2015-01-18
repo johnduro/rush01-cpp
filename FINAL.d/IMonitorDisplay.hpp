@@ -10,7 +10,7 @@ class IMonitorDisplay {
 		virtual ~IMonitorDisplay(void) {}
 
 		virtual void	initDisplay(std::vector<AModule*>&) = 0;
-		virtual void	updateDisplay(std::vector<AModule*>&) = 0;
+		virtual bool	updateDisplay(std::vector<AModule*>&) = 0;
 		virtual void    displayCPU (AModule&) = 0;
 		virtual void    displayRAM (AModule&) = 0;
 		virtual void    displayHostUserName(AModule&) = 0;

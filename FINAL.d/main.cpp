@@ -46,7 +46,8 @@ int main (void) {
 		{
 			for (unsigned int i = 0; i < vectorGlobal.size(); i++)
 				vectorGlobal[i]->update();
-			Display.updateDisplay(vectorGlobal);
+			if (!Display.updateDisplay(vectorGlobal))
+				break;
 		}
 	}
 	return (0);

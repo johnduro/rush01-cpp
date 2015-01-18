@@ -24,7 +24,7 @@ class NcursesDisplay : public IMonitorDisplay {
 		NcursesDisplay&		operator=(const NcursesDisplay&);
 
 		void				initDisplay(std::vector<AModule*>&);
-		void				updateDisplay(std::vector<AModule*>&);
+		bool				updateDisplay(std::vector<AModule*>&);
 		void    			displayCPU (AModule&);
 		void    			displayRAM (AModule&);
 		void    			displayHostUserName(AModule&);
