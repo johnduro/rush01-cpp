@@ -13,11 +13,12 @@
 // ** data.used_mem.first donne la memoire utilisee (long long) ** //
 // ** data.used_mem.second donne le pourcentage de memoire utilisee (float) ** //
 
-class ModuleRAM : public AModule {
+class ModuleRAM : public AModule
+{
 public:
 	struct Data {
 		std::pair<long long , long long>	memory;
-		std::pair<long long , float>	used_mem;
+		std::pair<long long , float>		used_mem;
 	};
 
 	ModuleRAM(void);
