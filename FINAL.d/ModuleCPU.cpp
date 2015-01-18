@@ -88,25 +88,26 @@ ModuleCPU::Data		ModuleCPU::getData(void) const {
 
 
 
-// #include <unistd.h>
-// #include <stdlib.h>
+/* #include <unistd.h>
+ #include <stdlib.h>
 
-// int	main ( void )
-// {
-// 	ModuleCPU	modC;
-// 	ModuleCPU::Data		dat;
+ int	main ( void )
+ {
+ 	ModuleCPU	modC;
+ 	ModuleCPU::Data		dat;
 
-// 	modC.initialize();
-// 	while (1)
-// 	{
-// 		sleep(1);
-// 		modC.update();
-// 		system("clear");
-// 		dat = modC.getData();
-// 		std::cout << "CPU name : " << dat.cpu_name << std::endl;
-// 		std::cout << "CPU cores : " << dat.nb_core << std::endl;
-// 		std::cout << "CPU activity : " << dat.cpu_usage.first << " %" <<  std::endl;
-// 		std::cout << "CPU idle : " << dat.cpu_usage.second << " %" <<  std::endl;
-// 	}
-// 	return 0;
-// }
+ 	modC.initialize();
+ 	while (1)
+ 	{
+ 		sleep(1);
+ 		modC.update();
+ 		system("clear");
+ 		dat = modC.getData();
+ 		std::cout << "CPU name : " << dat.cpu_name << std::endl;
+		std::cout << "CPU cores : " << dat.nb_core << std::endl;
+ 		std::cout << "CPU activity : " << dat.cpu_usage.first << " %" <<  std::endl;
+ 		std::cout << "CPU idle : " << dat.cpu_usage.second << " %" <<  std::endl;
+ 	}
+ 	return 0;
+ }
+*/
