@@ -1,7 +1,12 @@
 #ifndef AMODULE_HPP
 # define AMODULE_HPP
 
-# define INFO	'i'
+# define HOST 'h'
+# define TIME 't'
+# define OS 'o'
+# define CPU 'c'
+# define RAM 'r'
+# define NET 'n'
 
 # include <iostream>
 # include <map>
