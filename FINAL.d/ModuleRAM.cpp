@@ -27,7 +27,8 @@ ModuleRAM&			ModuleRAM::operator=(const ModuleRAM& src) {
 	return *this;
 }
 
-void				ModuleRAM::initialize(void) {
+void				ModuleRAM::initialize( void )
+{
 	int mib[2];
 	int64_t physical_memory;
 	size_t length;
@@ -41,28 +42,24 @@ void				ModuleRAM::initialize(void) {
 	return;
 }
 
-void				ModuleRAM::update(void) {
-    vm_size_t page_size;
-    mach_port_t mach_port;
-    mach_msg_type_number_t count;
-    vm_statistics64_data_t vm_stats;
+void				ModuleRAM::update(void)
+{
+	vm_statistics64_data_t vm_stats;
+	mach_port_t mach_port;
+	mach_msg_type_number_t count;
+	vm_size_t page_size;
 	float		keep;
 
-    mach_port = mach_host_self();
-    count = sizeof(vm_stats) / sizeof(natural_t);
-    if (KERN_SUCCESS == host_page_size(mach_port, &page_size) &&
-        KERN_SUCCESS == host_statistics64(mach_port, HOST_VM_INFO,
-										  reinterpret_cast<host_info64_t>(&vm_stats), &count))
-    {
-        this->_data.memory.second = static_cast<int64_t>(vm_stats.free_count) * static_cast<int64_t>(page_size);
+	mach_port = mach_host_self();
+	count = sizeof(vm_stats) / sizeof(natural_t);
 
-		this->_data.used_mem.first =  (static_cast<int64_t>(vm_stats.active_count) +
-									   static_cast<int64_t>(vm_stats.inactive_count) +
-									   static_cast<int64_t>(vm_stats.wire_count) *  static_cast<int64_t>(page_size));
-
-		keep = static_cast<float>(this->_data.used_mem.first) / static_cast<float>(this->_data.memory.first);
-		this->_data.used_mem.second = (keep * 100);
-    }
+	if (KERN_SUCCESS == host_page_size(mach_port, &page_size) && KERN_SUCCESS == host_statistics64(mach_port, HOST_VM_INFO, reinterpret_cast<host_info64_t>(&vm_stats), &count))
+	{
+		this->_data.memory.second = vm_stats.free_count * page_size;
+		this->_data.used_mem.first = (vm_stats.active_count + vm_stats.inactive_count + vm_stats.wire_count) * page_size;
+	}
+	keep = static_cast<float>(this->_data.used_mem.first) / static_cast<float>(this->_data.memory.first);
+	this->_data.used_mem.second = (keep * 100);
 	return;
 }
 
